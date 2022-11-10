@@ -13,4 +13,4 @@ specificationsRoutes.get("/", (request, response) => {
     return listSpecificationsController.handle(request, response);
 })
 
-export {specificationsRoutes};
+export { specificationsRoutes };
