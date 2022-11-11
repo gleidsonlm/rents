@@ -46,7 +46,7 @@ class ImportCategoryUseCase {
                 createdCategories.push({ name, description });
             }
         })
-        // todo: return the created categories 
+        // todo: return the createds categories 
         // console.log( createdCategories )
         return createdCategories;
     }

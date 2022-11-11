@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info":{
+        "title": "RentX API Documentation",
+        "description": "Documentation for developers to use RentX API, source code is available at [GitHub](https://github.com/gleidsonlm/rentx)",
+        "version": "0.1.0",
+        "contact": {
+            "name": "Issues",
+            "url": "https://github.com/gleidsonlm/rentx/issues"
+        }
+    },
+    "paths":{
+        "/categories": {
+            "post": {
+                "tags": ["Cars Category"],
+                "summary": "Create a new category",
+                "description": "In order to create a new category, POST your request with a JSON body with the values for 'name' and 'description'",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Electric",
+                                    "description":"Tesla Model S"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "409": {
+                        "description": "This category name is being used already"
+                    }
+                }   
+            }
+        }
+    }
+}
