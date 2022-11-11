@@ -44,6 +44,32 @@
                         "description": "This category name is being used already"
                     }
                 }   
+            },
+            "get": {
+                "tags": ["Cars Category"],
+                "summary": "List all categories",
+                "description": "Receives your GET request without parameters and returns a list of all categories.",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": { "type": "string" },
+                                            "name": { "type": "string" },
+                                            "description": { "type": "string" },
+                                            "created_at": { "type": "string" }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
