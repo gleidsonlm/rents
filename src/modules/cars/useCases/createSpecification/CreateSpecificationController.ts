@@ -13,7 +13,6 @@ class CreateSpecificationController {
             this.createSpecificationUseCase.execute({ name,description });
             return response.status(201).send();
         } catch (error) {
-            console.log(error)
             return response.status(409).send(error);
         }
     }
