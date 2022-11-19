@@ -5,14 +5,14 @@ class ListCategoriesController{
 
     constructor(private listCategoriesUseCase: ListCategoriesUseCase) { }
 
-    handle(request:Request, response:Response): Response {
+    async handle(request:Request, response:Response): Promise<Response> {
         try {
-            const all = this.listCategoriesUseCase.execute()
+            const all = await this.listCategoriesUseCase.execute()
 
             return response.status(200).json(all)
         } catch(error) {
-            console.log(error)
-            return response.status(500).send();
+
+            return response.status(500).json({error:error.message});
         }
 
     }

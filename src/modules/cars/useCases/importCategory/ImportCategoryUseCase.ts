@@ -12,9 +12,9 @@ class ImportCategoryUseCase {
 
     loadCategories(file:Express.Multer.File):Promise<IImportCategory[]> {
         return new Promise((resolve, reject) => {
-            const categories:IImportCategory[] = [];
-
             const stream = fs.createReadStream(file.path);
+            
+            const categories:IImportCategory[] = [];
             
             const parseFile = csvParse();
     
@@ -34,22 +34,19 @@ class ImportCategoryUseCase {
         });
     };
     
-    async execute(file:Express.Multer.File):Promise<IImportCategory[]> {
+    async execute(file:Express.Multer.File):Promise<void> {
         const categories = await this.loadCategories(file);
-        const createdCategories:IImportCategory[] = [];
 
-        categories.map((category) => {
+        categories.map(async (category) => {
             const { name, description } = category;
-            const existCategory = this.categoriesRepository.findByName(name);
+            
+            const existCategory = await this.categoriesRepository.findByName(name);
 
             if (!existCategory) {
-                this.categoriesRepository.create({ name, description });
-                createdCategories.push({ name, description });
-            }
-        })
-        // todo: return the createds categories 
-        // console.log( createdCategories )
-        return createdCategories;
-    }
-}
-export { ImportCategoryUseCase }
+                await this.categoriesRepository.create({ name, description });
+            };
+        });
+    };
+};
+
+export { ImportCategoryUseCase };

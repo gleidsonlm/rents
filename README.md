@@ -14,6 +14,7 @@
 
     - The RentX API backend will run on the HTTP localhost '3333' port. (eg. http://localhost:3333)
     - The JavaScript filesytem will use the folder "./tmp/" in the project root folder for temporary files.
+    - Review ```ormconfig.example.json``` file to your settings and save as ```ormconfig.json```.
 
 ## DB Diagram ##
 

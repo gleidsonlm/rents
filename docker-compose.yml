@@ -1,10 +1,32 @@
 version: "2.12"
 
 services:
+
+  db:
+    image: postgres
+    container_name: rentxDb
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=rentx
+    volumes:
+      - pgdata:/data/postgres
+
   app:
     build: .
-    container_name: rentx
+    container_name: rentxApp
     ports:
       - 3333:3333
     volumes:
       - .:/usr/app/
+    links:
+      - db 
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+    driver: local
