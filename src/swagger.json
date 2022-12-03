@@ -41,7 +41,7 @@
                         "description": "Created"
                     },
                     "409": {
-                        "description": "This category name is being used already"
+                        "description": "Category name in use already"
                     }
                 }   
             },
@@ -49,6 +49,95 @@
                 "tags": ["Cars Category"],
                 "summary": "List all categories",
                 "description": "Receives your GET request without parameters and returns a list of all categories.",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": { "type": "string" },
+                                            "name": { "type": "string" },
+                                            "description": { "type": "string" },
+                                            "created_at": { "type": "string" }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories/import":{
+            "post": {
+                "tags": ["Cars Category"],
+                "summary": "Upload a file to create categories",
+                "description": "In order to create new categories, POST your request with a CSV file containing one category per line with the values 'name' and 'description' separated by comma",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/specifications": {
+            "post": {
+                "tags": ["Cars Specifications"],
+                "summary": "Create a new specification",
+                "description": "In order to create a new specification, POST your request with a JSON body with the values for 'name' and 'description'",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "AD",
+                                    "description":"Auto-drive"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "409": {
+                        "description": "Specification name in use already"
+                    }
+                }   
+            },
+            "get": {
+                "tags": ["Cars Specifications"],
+                "summary": "List all specifications",
+                "description": "Receives your GET request without parameters and returns a list of all specifications.",
                 "responses": {
                     "200": {
                         "description": "Success",
