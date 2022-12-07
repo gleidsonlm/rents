@@ -3,6 +3,7 @@ import { inject, injectable } from "tsyringe";
 
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { AppError } from '../../../../errors/AppError';
 
 @injectable()
 class CreateUserUseCase {
@@ -19,7 +20,7 @@ class CreateUserUseCase {
     }: ICreateUserDTO): Promise<void> {
         const emailRegistered = await this.usersRepository.findByEmail(email);
         if (emailRegistered) {
-            throw new Error('Email in use already')
+            throw new AppError('Email in use already',409)
         };
 
         const hashedPassword = await hash(password, 10);
