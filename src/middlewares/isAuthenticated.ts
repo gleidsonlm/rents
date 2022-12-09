@@ -8,13 +8,12 @@ interface IPayload {
 }
 
 export async function isAuthenticated(request: Request, response: Response, next: NextFunction) {
+    const authHeader = request.headers.authorization;
+    if (!authHeader) {
+        throw new AppError('Missing authorization header', 401);
+    };
 
-    try {
-        const authHeader = request.headers.authorization;
-        if (!authHeader) {
-            throw new AppError('Missing authorization header', 401);
-        };
-        
+    try {        
         const [, token] = authHeader.split(' ');
         const { sub: user_id } = verify(token, process.env.JWT_SECRET) as IPayload;
         if (!user_id) {
@@ -26,6 +25,10 @@ export async function isAuthenticated(request: Request, response: Response, next
         if (!user) {
             throw new AppError('User not found', 401);
         };
+
+        request.user = { 
+            id: user_id
+        }
         
         next();
     } catch (error) {

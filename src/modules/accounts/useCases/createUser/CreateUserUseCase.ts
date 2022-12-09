@@ -16,7 +16,8 @@ class CreateUserUseCase {
         name,
         password,
         email,
-        driver_license
+        driver_license,
+        avatar
     }: ICreateUserDTO): Promise<void> {
         const emailRegistered = await this.usersRepository.findByEmail(email);
         if (emailRegistered) {
@@ -29,7 +30,8 @@ class CreateUserUseCase {
             name,
             password : hashedPassword,
             email,
-            driver_license
+            driver_license,
+            avatar
         })
     }
 }
