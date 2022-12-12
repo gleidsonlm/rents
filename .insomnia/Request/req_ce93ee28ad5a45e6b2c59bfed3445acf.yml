@@ -1,0 +1,32 @@
+_id: req_ce93ee28ad5a45e6b2c59bfed3445acf
+type: Request
+parentId: fld_043add06921e45a08f0f5660fc3b1551
+modified: 1670413574843
+created: 1668117617203
+url: "{{ _.baseURL }}/categories/import"
+name: /categories/import
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_d1cbb736ce4b41a88220bc9f6f3014a9
+      name: file
+      value: ""
+      description: ""
+      type: file
+      fileName: /Users/gleidsonlm/Projects/rentx/categories-example.csv
+      disabled: false
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication: {}
+metaSortKey: -1668025509239
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

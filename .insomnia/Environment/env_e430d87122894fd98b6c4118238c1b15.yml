@@ -1,0 +1,16 @@
+_id: env_e430d87122894fd98b6c4118238c1b15
+type: Environment
+parentId: env_ae127c8b25204aa7a1fa74d5851da89e
+modified: 1670611425744
+created: 1668025422867
+name: localhost 3333
+data:
+  baseURL: http://localhost:3333
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA2MTE0MTMsImV4cCI6MTY3MDY5NzgxMywic3ViIjoiYzQxYzA1MjEtMzhiNi00ODE3LWIwOWQtNzllMzE5MTdiZDQyIn0.jxeJl_eo0aE4msHiZwfd62kSFx689h57knM7dM-XsuM
+dataPropertyOrder:
+  "&":
+    - baseURL
+    - token
+color: null
+isPrivate: false
+metaSortKey: 1666898558942

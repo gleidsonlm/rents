@@ -1,0 +1,33 @@
+_id: req_fac66797ac534f7388076f387dd05e37
+type: Request
+parentId: fld_8699cf391a0d4f10b825a7ec2b119386
+modified: 1670611364841
+created: 1670079193811
+url: "{{ _.baseURL }}/users/"
+name: /users
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+        "name": "Gleidson Medeiros",
+        "username": "gleidsonlm",
+        "password": "senha",
+        "email": "noreply@gleidsonlm.com",
+        "driver_license": "1234567890",
+    		"avatar":""
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1670079193811
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

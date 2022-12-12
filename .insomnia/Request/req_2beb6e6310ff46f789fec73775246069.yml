@@ -1,0 +1,29 @@
+_id: req_2beb6e6310ff46f789fec73775246069
+type: Request
+parentId: fld_043add06921e45a08f0f5660fc3b1551
+modified: 1670069299870
+created: 1668025509239
+url: "{{ _.baseURL }}/categories"
+name: /categories
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name":"Luxury",
+    	"description":"Lincoln Continental"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1668025509339
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,14 @@
+_id: env_e77e831bdd934f1f9bab9b937a9f8edf
+type: Environment
+parentId: env_ae127c8b25204aa7a1fa74d5851da89e
+modified: 1668025422895
+created: 1668025422895
+name: rocketseat-ignite-nodejs
+data:
+  baseURL: http://localhost:8080
+dataPropertyOrder:
+  "&":
+    - baseURL
+color: null
+isPrivate: false
+metaSortKey: 1666898558992

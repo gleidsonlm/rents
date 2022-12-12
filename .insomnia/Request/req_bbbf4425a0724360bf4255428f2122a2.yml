@@ -1,0 +1,43 @@
+_id: req_bbbf4425a0724360bf4255428f2122a2
+type: Request
+parentId: fld_8699cf391a0d4f10b825a7ec2b119386
+modified: 1670616806078
+created: 1670436634821
+url: "{{ _.baseURL }}/users/avatar"
+name: /users/avatar
+description: ""
+method: PATCH
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_2f7d6fc4bad64be6be00d863841ffa72
+      name: avatar
+      value: ""
+      description: ""
+      type: file
+      fileName: /Users/gleidsonlm/Downloads/7895653215801_latch_matte-black-prizm-violet_main_001.jpg
+      disabled: false
+    - id: pair_ea55c22bff8f424ca9599a5b662d2e39
+      name: avatar
+      value: ""
+      description: ""
+      disabled: true
+      type: file
+      multiline: null
+      fileName: /Users/gleidsonlm/Downloads/286857-800-auto.jpg
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+  disabled: false
+metaSortKey: -1670079193761
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

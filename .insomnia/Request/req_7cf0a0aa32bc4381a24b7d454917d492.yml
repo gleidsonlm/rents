@@ -1,0 +1,24 @@
+_id: req_7cf0a0aa32bc4381a24b7d454917d492
+type: Request
+parentId: fld_64df4f087cf244a994eb039d65df59be
+modified: 1670412653686
+created: 1668091460196
+url: "{{ _.baseURL }}/specifications"
+name: /specifications
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA0MDg4NzIsImV4cCI6MTY3MDQ5NTI3Miwic3ViIjoiYzQxYzA1MjEtMzhiNi00ODE3LWIwOWQtNzllMzE5MTdiZDQyIn0.b8H5SK17lqcC_yHErpEL1uFJ5rUSaQnhdf9l9utISfg
+  disabled: false
+metaSortKey: -1667750667336.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
